@@ -1,0 +1,116 @@
+:root {
+    --mauve: #C6A0F6;
+    --yellow: #E6C283;
+    --white: rgb(248, 246, 242);
+    --black: #22202E;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--black);
+    color: var(--yellow);
+    margin: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+button {
+    border: none;
+    color: var(--yellow);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.calc-body {
+    background-color: #4a4563;
+    width: 480px;
+    height: 650px;
+    border-radius: 2rem;
+    border: 4px solid #22202e57;
+    display: flex;
+    flex-direction: column;
+}
+
+.calc-display {
+    height: 8rem;
+    margin: 2rem 2rem 0rem 2rem;
+    border-radius: 5px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.calc-display .operation-display {
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+    opacity: 0.7;
+}
+
+.calc-display .result-display {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.calc-inputs {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.8fr 1fr 1fr 1fr 2fr;
+    gap: 10px;
+    margin: 2rem;
+}
+
+.calc-inputs > button {
+    background-color: #5f5f85;
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.1s ease-out;
+    user-select: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.calc-inputs > button:hover {
+    filter: opacity(70%);
+}
+
+.calc-inputs > button:disabled {
+    filter: grayscale(40%);
+}
+
+.calc-inputs > .blank {
+    background-color: #5f5f8500;
+}
+
+.calc-inputs > button.operator {
+    background-color: #E6C283;
+    color: #4A4563;
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.calc-inputs > .clear {
+    background-color: #e68383;
+    color: #4A4563;
+    font-size: 1.4rem;
+}
+
+.calc-body > hr {
+    width: 100%;
+    background-color: #22202e57;
+    height: 6px;
+    border: none;
+}
