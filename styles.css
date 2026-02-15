@@ -59,6 +59,8 @@ h1, h2, h3, h4, h5, h6, p {
 .calc-display .result-display {
     font-size: 3rem;
     font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .calc-inputs {
@@ -104,6 +106,12 @@ h1, h2, h3, h4, h5, h6, p {
 
 .calc-inputs > .clear {
     background-color: #e68383;
+    color: #4A4563;
+    font-size: 1.4rem;
+}
+
+.calc-inputs > .back {
+    background-color: #ffa187;
     color: #4A4563;
     font-size: 1.4rem;
 }
