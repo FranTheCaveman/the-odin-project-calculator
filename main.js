@@ -13,6 +13,9 @@ let equalsLocked = true; // If equals is locked it is because: num1 is not selec
 let decimalLocked = false;
 let result = "";
 
+/*
+ * Math Functions
+ */
 function add(num1, num2) {
     return parseFloat(num1) + parseFloat(num2);
 }
@@ -75,16 +78,20 @@ function fixSoloDecimalPoint(num) {
     return num;
 }
 
+/***
+ * This function appends numbers to the formula
+ */
 function appendNum(num, isKeyDown) {
     let val = isKeyDown ? num : num.getAttribute("data-num");
     result = ""; // Clear result if user presses num after calculating answer
 
+    // Don't add decimal point if decimal is locked
     if (!(val === "." && decimalLocked)) {
         // Num1 should append if operator & num2 isn't yet selected, and if there is no result
         if (operatorLocked || operator === "" && result === "") {            
             num1 += val;
             num1 = fixSoloDecimalPoint(num1);
-            operatorLocked = false;
+            operatorLocked = false; // Unlock operator after Num1 is selected
         }
         // Num2 should append if an operator has been selected
         else {
@@ -93,10 +100,10 @@ function appendNum(num, isKeyDown) {
             // Equals is unlocked when num2 is selected
             equalsLocked = false;
         }
-
-        if (val === ".") decimalLocked = true;
+        // Lock decimal if decimal is selected 
+        if (val === ".") decimalLocked = true; 
     }
-    updateDisabledButtons();
+    updateDisabledButtons(); 
     updateOperationDisplay(num1, operatorSymbol, num2);
 }
 
@@ -107,7 +114,10 @@ for (const num of numbers) {
 }
 
 let operators = document.querySelectorAll(".operator, .equals");
-
+ 
+/***
+  * This function appends the operator to the formula and/or triggers the operation
+  */
 function appendOperator(op, isKeyDown) {
     let notation = isKeyDown ? op : op.getAttribute("data-notation");
     if (notation === "Enter") notation = "=";
@@ -171,6 +181,9 @@ for (const op of operators) {
     })
 }
 
+/***
+ * This function removes the last character in the formula
+ */
 function backSpace() {
     // Num1
     if (operatorLocked || operator === "" && result === "") {          
@@ -204,6 +217,9 @@ function updateDisabledButtons() {
 
 updateDisabledButtons();
 
+/***
+ * Clear all numbers, operator, result, set locks to defaults, and displays. 
+ */
 function clearAll() {
     num1 = "";
     num2 = "";

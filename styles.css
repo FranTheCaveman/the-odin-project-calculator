@@ -1,12 +1,7 @@
 :root {
-    --mauve: #C6A0F6;
-    --yellow: #E6C283;
-    --white: rgb(248, 246, 242);
-    --black: #22202E;
-
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: var(--black);
-    color: var(--yellow);
+    background-color: #22202E;
+    color: #E6C283;
     margin: 1rem;
     margin: 0;
     padding: 0;
@@ -21,7 +16,7 @@ body {
 
 button {
     border: none;
-    color: var(--yellow);
+    color: #E6C283;
 }
 
 h1, h2, h3, h4, h5, h6, p {
